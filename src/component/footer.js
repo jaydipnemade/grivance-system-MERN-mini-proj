@@ -3,7 +3,7 @@ const Footer = () => {
     return (
         <div className="footer">
             <div id="carouselExampleAutoplaying" className="carousel slide py-3  me-auto ms-auto bg-dark mt-5"
-                data-bs-ride="carousel"   data-interval="2000"  style={{width: "100%"}}>
+                data-bs-ride="carousel"   data-bs-interval="0"  style={{width: "100%"}}>
                 <div className="carousel-inner d-flex">
 
                     <div  className="carousel-item active">

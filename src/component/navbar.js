@@ -42,27 +42,27 @@ const Navbar = () => {
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav me-0 ms-auto mb-2 mb-lg-0 ">
 
-                                <li className="nav-item"><Link className="nav-link active" to="/">Home</Link></li>
+                                <li className="nav-item"><Link className="nav-link " to="/">Home</Link></li>
 
-                                <li className="nav-item"><Link className="nav-link active" to="/grievance">Add your Grievance</Link>
+                                <li className="nav-item"><Link className="nav-link " to="/grievance">Add your Grievance</Link>
                                 </li>
 
 
-                                <li className="nav-item"><Link className="nav-link active" to="/aboutus">About us</Link></li>
+                                <li className="nav-item"><Link className="nav-link " to="/aboutus">About us</Link></li>
 
 
                                 <li className="nav-item dropdown ">
-                                    <a className="nav-link dropdown-toggle active" href="./" role="button" data-bs-toggle="dropdown"
+                                    <a className="nav-link dropdown-toggle " href="./" role="button" data-bs-toggle="dropdown"
                                         aria-expanded="false">
                                         Login/Sign up
                                     </a>
                                     <ul className="dropdown-menu">
 
-                                        <li><Link className="nav-link active" to="/userlogin">User </Link></li>
+                                        <li><Link className="nav-link " to="/userlogin">User </Link></li>
                                         <li>
                                             <hr className="dropdown-divider" />
                                         </li>
-                                        <li><Link className="nav-link active" to="/adminlogin">Admin </Link></li>
+                                        <li><Link className="nav-link " to="/adminlogin">Admin </Link></li>
                                     </ul>
                                 </li>
 

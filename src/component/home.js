@@ -17,7 +17,7 @@ function Home() {
             <div className="text-light  heading-text  my-5 ">
                 C-DAC Home
             </div>
-            <div id="carouselExampleIndicators" className="carousel slide " data-bs-ride="carousel" data-bs-interval="100">
+            <div id="carouselExampleIndicators" className="carousel slide " data-bs-ride="carousel" data-bs-interval="0">
                 <div className="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active"
                         aria-label="Slide 1"></button>
