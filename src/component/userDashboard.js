@@ -27,10 +27,11 @@ const UserDashboard = () => {
           <thead>
             <tr>
               <th>TimeStamp</th>
-              <th>Name</th>
+              {/* <th>Name</th>
               <th>Email</th>
               <th>Contact</th>
-              <th>Identity</th>
+              <th>Identity</th> */}
+              <th>Email</th>
               <th>Grievance</th>
               <th>Status</th>
             </tr>
@@ -43,10 +44,11 @@ const UserDashboard = () => {
                 return (
                   <tr>
                     <td>{i.date}</td>
-                    <td>{i.name}</td>
+                    {/* <td>{i.name}</td>
                     <td>{i.email}</td>
                     <td>{i.cno}</td>
-                    <td>{i.who}</td>
+                    <td>{i.who}</td> */}
+                    <td>{i.email}</td>
 
                     <td>
                       <a
@@ -66,9 +68,7 @@ const UserDashboard = () => {
                         </div>
                       </div>
                     </td>
-                    <td>
-                      {i.statusofg}
-                    </td>
+                    <td>{i.statusofg}</td>
                   </tr>
                 );
               }
