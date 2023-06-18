@@ -72,7 +72,7 @@ const Signup = () => {
     <>
       <div className="my-5 temp">..</div>
       <div className="text-light heading-text my-5">User Sign-up</div>
-      <div className="card p-3 form-signin text-center w-25 m-auto rounded-4 ">
+      <div className="card p-3 form-signin text-center m-auto rounded-4  widthform">
         <form onSubmit={addSignupAction}>
           <img
             className="mb-4"

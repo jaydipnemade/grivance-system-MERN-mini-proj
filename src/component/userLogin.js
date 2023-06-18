@@ -22,11 +22,14 @@ const UserLogin = () => {
       //   console.log(response);
       if (response.ok) {
         console.log("Login successful");
-        navigate("/userdashboard");
+        // After successful login
+
+        navigate("/userdashboard/" + encodeURIComponent(email));
 
         // Perform any additional actions after successful login
       } else {
         console.error("Invalid credentials");
+        alert("Incorrect Email" + " " + email + " " + "or password");
         // Display an error message or perform any additional actions for failed login
       }
     } catch (error) {
@@ -37,7 +40,7 @@ const UserLogin = () => {
     <>
       <div className="my-5 temp">..</div>
       <div className="text-light heading-text my-5">User Log-in</div>
-      <div className="card p-3 form-signin text-center w-25 m-auto rounded-4 ">
+      <div className="card p-3 form-signin text-center  m-auto rounded-4 widthform">
         <form onSubmit={haddSignupAction}>
           <img
             class="mb-4"

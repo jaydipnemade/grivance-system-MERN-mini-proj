@@ -10,7 +10,7 @@ const AdminLogin = () => {
     e.preventDefault();
 
     try {
-    //   alert(email + pass);
+      //   alert(email + pass);
       const response = await fetch("http://localhost:4000/login", {
         method: "POST",
         headers: {
@@ -18,7 +18,7 @@ const AdminLogin = () => {
         },
         body: JSON.stringify({ email, pass }),
       });
-    //   console.log(response);
+      //   console.log(response);
       if (response.ok) {
         console.log("Login successful");
         navigate("/admindashboard");
@@ -37,7 +37,7 @@ const AdminLogin = () => {
     <>
       <div className="my-5 temp">..</div>
       <div className="text-light heading-text my-5">Admin Log-in</div>
-      <div className="card p-3 form-signin text-center w-25 m-auto rounded-4 ">
+      <div className="card p-3 form-signin text-center m-auto rounded-4 widthform">
         <form onSubmit={haddSignupAction}>
           <img
             class="mb-4"
