@@ -16,6 +16,100 @@ const UserDashboard = () => {
         setdata(data1.allgrivance);
       });
   }, []);
+
+  // const deletedataaction = async () => {
+  //   try {
+  //     let res = await fetch("http://localhost:4000/DeleteData");
+  //     if (res.status === 500) {
+  //       let errorMessage = await res.text();
+  //       throw new Error(errorMessage);
+  //     }
+  //     alert("Success");
+  //     // Refresh the page or perform any other necessary actions
+  //     // getAllUserAction();
+  //   } catch (error) {
+  //     alert(`Error: ${error.message}`);
+  //   }
+  // };
+
+  // function deleteGrivance() {
+  //   const id = id; // Replace with the actual ID of the grievance you want to delete
+
+  //   fetch("http://localhost:4000/deleteGrivance", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({ id }),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       // Handle the response
+  //       console.log(data.message); // Log the response message
+  //       // Refresh the page or update the UI as needed
+  //     })
+  //     .catch((error) => {
+  //       // Handle any errors
+  //       console.error(error);
+  //     });
+
+  // function deleteGrivance() {
+  // const idInput = document.getElementById(data1);
+  // const id = idInput.value.trim();
+
+  // if (id === "") {
+  //   alert("Please enter a valid Grievance ID.");
+  //   return;
+  // }
+
+  // fetch("http://localhost:4000/deleteGrivance", {
+  //   method: "POST",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
+  //   body: JSON.stringify({ id }),
+  // })
+  //   .then((response) => response.json())
+  //   .then((data) => {
+  //     // Handle the response
+  //     console.log(data.message); // Log the response message
+  //     // Refresh the page or update the UI as needed
+  //   })
+  //   .catch((error) => {
+  //     // Handle any errors
+  //     console.error(error);
+  //   });
+
+  // }
+
+  function deleteGrivance(id) {
+    if (!id) {
+      alert("Please enter a valid Grievance ID.");
+      return;
+    }
+
+    fetch("http://localhost:4000/deleteGrivance", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // Handle the response
+        // console.log(data.message);
+        window.location.reload();
+        // alert("entry has been deleted");
+        // Log the response message
+        // Refresh the page or update the UI as needed
+      })
+      .catch((error) => {
+        // Handle any errors
+        console.error(error);
+      });
+  }
+
   return (
     <>
       <div className="my-5 temp">..</div>
@@ -27,13 +121,12 @@ const UserDashboard = () => {
           <thead>
             <tr>
               <th>TimeStamp</th>
-              {/* <th>Name</th>
+              <th>Name</th>
               <th>Email</th>
-              <th>Contact</th>
-              <th>Identity</th> */}
-              <th>Email</th>
+
               <th>Grievance</th>
               <th>Status</th>
+              <th></th>
             </tr>
           </thead>
 
@@ -44,10 +137,7 @@ const UserDashboard = () => {
                 return (
                   <tr>
                     <td>{i.date}</td>
-                    {/* <td>{i.name}</td>
-                    <td>{i.email}</td>
-                    <td>{i.cno}</td>
-                    <td>{i.who}</td> */}
+                    <td>{i.name}</td>
                     <td>{i.email}</td>
 
                     <td>
@@ -69,6 +159,14 @@ const UserDashboard = () => {
                       </div>
                     </td>
                     <td>{i.statusofg}</td>
+                    <td>
+                      <input
+                        type="submit"
+                        value="delete"
+                        className="btn btn-danger"
+                        onClick={() => deleteGrivance(i.id)} // Pass the ID to the delete function
+                      ></input>
+                    </td>
                   </tr>
                 );
               }
