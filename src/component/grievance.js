@@ -18,6 +18,102 @@ const Grievance = () => {
     who: "",
     textgriv: "",
   });
+
+  // VALIDATION
+
+  // const [errors, setErrors] = useState({});
+
+  // const [isSuccess, setIsSuccess] = useState(false);
+  // const [isError, setIsError] = useState(false);
+
+  // let formRef = useRef();
+
+  // const validateField = (fieldName, value) => {
+  //   let error = null;
+
+  //   if (fieldName === "name") {
+  //     error = value ? null : "Please enter a username";
+  //   } else if (fieldName === "email") {
+  //     if (!value) {
+  //       error = "Please enter an email";
+  //     } else if (!/\S+@\S+\.\S+/.test(value)) {
+  //       error = "Please enter a valid email";
+  //     }
+  //   } else if (fieldName === "cno") {
+  //     if (!value) {
+  //       error = "Please enter a mobile number";
+  //     } else if (!/^\d{10}$/.test(value)) {
+  //       error = "Please enter a valid 10-digit mobile number";
+  //     }
+  //   }
+
+  //   return error;
+  // };
+
+  // // uname
+  //   let handlename = (e) => {
+  //     let newname = { ...grivence, uname: e.target.value };
+  //     setgrivence(newname);
+  //     const error = validateField("name", value);
+
+  //     setErrors((prevErrors) => ({
+  //       ...prevErrors,
+  //       name: error,
+  //   }));
+
+  //   // cno
+  //   let handlecno = (e) => {
+  //     let newcno = { ...grivence, cno: e.target.value };
+  //     setgrivence(newcno);
+  //     const error = validateField("cno", value);
+
+  //     setErrors((prevErrors) => ({
+  //       ...prevErrors,
+  //       cno: error,
+  //   }));
+
+  //   // prn
+  //   let handleprn = (e) => {
+  //     let newprn = { ...grivence, prn: e.target.value };
+  //     // alert(e.target.value);
+  //     setgrivence(newprn);
+  //     const error = validateField("prn", value);
+  //     setErrors((prevErrors) => ({
+  //       ...prevErrors,
+  //       prn: error,
+  //   }));
+
+  //   // email
+  //   let handleemail = (e) => {
+  //     let newemail = { ...grivence, email: e.target.value };
+  //     setgrivence(newemail);
+  //     const error = validateField("email", value);
+  //     setErrors((prevErrors) => ({
+  //       ...prevErrors,
+  //       email: error,
+  //   }));
+
+  //   // who
+  //   let handlewho = (e) => {
+  //     let newwho = { ...grivence, who: e.target.value };
+  //     setgrivence(newwho);
+  //     const error = validateField("who", value);
+  //     setErrors((prevErrors) => ({
+  //       ...prevErrors,
+  //       who: error,
+  //   }));
+
+  //   // cnfpass
+  //   let handleTextGrivChange = (e) => {
+  //     let newtextgriv = { ...grivence, textgriv: e.target.value };
+  //     setgrivence(newtextgriv);
+  //     const error = validateField("textgriv", value);
+  //     setErrors((prevErrors) => ({
+  //       ...prevErrors,
+  //       textgriv: error,
+
+  //   }));
+
   // uname
   let handlename = (e) => {
     let newname = { ...grivence, uname: e.target.value };
@@ -64,9 +160,9 @@ const Grievance = () => {
 
       let url = `http://localhost:4000/addgriv?name=${grivence.uname}&cno=${grivence.cno}&prn=${grivence.prn}&email=${grivence.email}&who=${grivence.who}&text=${grivence.textgriv}`;
       //   alert(url);
-        fetch(url);
-        alert("Grivance submited plz refresh the page")
-       navigate("/userLogin");
+      fetch(url);
+      alert("Grivance submited plz refresh the page");
+      navigate("/userLogin");
     } else {
       alert("enter email atlest");
     }

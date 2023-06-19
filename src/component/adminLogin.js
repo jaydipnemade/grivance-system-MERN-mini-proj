@@ -26,6 +26,7 @@ const AdminLogin = () => {
         // Perform any additional actions after successful login
       } else {
         console.error("Invalid credentials");
+        alert("please check credetials agin ")
         // Display an error message or perform any additional actions for failed login
       }
     } catch (error) {

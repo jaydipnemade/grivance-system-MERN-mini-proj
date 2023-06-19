@@ -29,7 +29,15 @@ const UserLogin = () => {
         // Perform any additional actions after successful login
       } else {
         console.error("Invalid credentials");
-        alert("Incorrect Email" + " " + email + " " + "or password");
+        alert(
+          "Incorrect Email" +
+            " " +
+            email +
+            " " +
+            "or password" +
+            "" +
+            "or try to add new USER"
+        );
         // Display an error message or perform any additional actions for failed login
       }
     } catch (error) {
